@@ -2,6 +2,8 @@
 
 A cinematic, responsive detective game. Start with the included fictional Blackwood case, inspect evidence and suspect files, connect clues, use progressive hints, and make one final accusation. A correct or incorrect accusation reveals the authoritative solution and the evidence that supports it.
 
+**Live demo:** [ai-mystery-room-4n57.onrender.com](https://ai-mystery-room-4n57.onrender.com)
+
 ## Run locally
 
 Requires Node.js 20 or newer and npm.
