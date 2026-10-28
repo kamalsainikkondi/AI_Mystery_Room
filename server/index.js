@@ -14,8 +14,13 @@ const app = express();
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const port = Number(process.env.PORT || 3001);
 app.disable('x-powered-by');
+if (process.env.NODE_ENV === 'production') app.set('trust proxy', 1);
 app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
-app.use(cors({ origin: process.env.CLIENT_ORIGIN?.split(',') || 'http://localhost:5173' }));
+if (process.env.CLIENT_ORIGIN) {
+  app.use(cors({ origin: process.env.CLIENT_ORIGIN.split(',').map(origin => origin.trim()) }));
+} else if (process.env.NODE_ENV !== 'production') {
+  app.use(cors({ origin: 'http://localhost:5173' }));
+}
 app.use(express.json({ limit: '16kb' }));
 
 const caseSchema = new mongoose.Schema({
