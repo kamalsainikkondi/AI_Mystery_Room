@@ -1,0 +1,155 @@
+/* Shared visual language: midnight ink, forensic teal, archival gold, restrained crimson. */
+:root {
+  --font-title-xl: clamp(2.75rem, 6.3vw, 4.75rem);
+  --font-title: clamp(1.8rem, 3vw, 2.2rem);
+  --font-section: 1.375rem;
+  --font-body: 0.9375rem;
+  --font-small: 0.8125rem;
+  --font-meta: 0.6875rem;
+  --line-height-body: 1.7;
+  --line-height-heading: 1.16;
+  --evidence-verified: var(--teal);
+  --evidence-unverified: var(--gold-soft);
+  --evidence-red-herring: var(--crimson-soft);
+  --button-text: #071215;
+}
+
+html { background: var(--ink-950); }
+body, button, input, textarea, select { font-family: var(--sans); }
+body { color: var(--text); font-size: var(--font-body); line-height: var(--line-height-body); }
+h1, h2, h3, .page-head h1, .landing-copy h1, .section-heading h2,
+.modal-heading h2, .evidence-card-body > b, .preview-paper h2 { font-family: var(--serif); }
+small, .workspace-label, .nav-label, .eyebrow, .section-kicker,
+.report-ref, .field-label, .case-status, .crumbs > span,
+.card-meta, .card-foot, .time-stamp, .suspect-number,
+.evidence-detail-meta, .reliability, .evidence-status, .preview-footer,
+.preview-stamp, .preview-eyebrow, .preview-index, .landing-eyebrow,
+.landing-footer, .field-meta, .final-note { font-family: var(--mono); }
+
+/* Navigation and global chrome */
+.sidebar { background: var(--ink-900); border-color: var(--line); }
+.brand { color: var(--text); border-color: var(--line); }
+.brand-mark { border-color: var(--line-bright); }
+.brand-mark span { background: var(--teal); }
+.workspace-label, .nav-label { color: var(--muted); }
+.case-switcher, .progress-card, .suspects-widget, .board-widget,
+.evidence-card, .modal, .notes-area, .evidence-document,
+.search-box, .form-row select, .board-form select { background-color: var(--surface-900); border-color: var(--line); }
+.nav-item { color: var(--text-soft); }
+.nav-item:hover, .nav-item.active { background: var(--surface-850); color: var(--text); }
+.nav-item.active::before { background: var(--teal); }
+.hint-icon, .hint-spark { color: var(--teal); border-color: var(--teal); }
+.privacy-note, .user-profile { border-color: var(--line); color: var(--muted); }
+.topbar { background: var(--ink-900); border-color: var(--line); }
+.crumbs { color: var(--muted); }
+.crumbs b { color: var(--text-soft); }
+.case-status > span, .case-badge > span { background: var(--teal); box-shadow: 0 0 8px var(--teal-wash); }
+.top-new, .case-menu, .plain-icon, .icon-button { border-color: var(--line-bright); color: var(--text-soft); }
+.top-new:hover, .text-link:hover, .board-button:hover, .landing-top > button:hover { color: var(--teal-bright); border-color: var(--teal); }
+
+/* Editorial case file and evidence surfaces */
+.page-head h1, .section-heading h2, .widget-head h3, .modal-heading h2 { color: var(--text); line-height: var(--line-height-heading); }
+.page-head p, .brief-text, .modal-intro, .evidence-card-body > p,
+.timeline-row p, .board-widget > p, .suspect-motive > span,
+.suspect-profile > p, .solution-copy p { color: var(--text-soft); }
+.eyebrow, .section-kicker, .report-ref, .field-label, .card-meta,
+.card-foot, .time-stamp, .suspect-number, .field-meta { color: var(--muted); }
+.section-heading h2 em, .suspects-widget h3 em, .progress-number { color: var(--gold-soft); }
+.case-banner { background: linear-gradient(112deg, #142932, #17232c 58%, #202c32); border-color: var(--line-bright); }
+.banner-grain { opacity: .32; background-image: repeating-linear-gradient(0deg, transparent 0, transparent 2px, var(--texture) 3px), radial-gradient(ellipse at 80% 10%, var(--teal-wash), transparent 50%); }
+.banner-grain::after { border-color: var(--line-glass); box-shadow: 0 0 0 22px var(--teal-wash), 0 0 0 44px var(--texture); }
+.case-badge { background: var(--surface-glass); border-color: var(--line-glass); }
+.case-location svg, .fiction-label svg { color: var(--gold-soft); }
+.banner-open { background: var(--teal); color: var(--button-text); }
+.banner-open:hover, .primary-button:hover, .landing-primary:hover { background: var(--teal-bright); }
+.brief-meta, .brief-meta > div, .timeline-list::before,
+.timeline-section, .evidence-section, .sidebar-rule { border-color: var(--line); }
+.evidence-art, .art-0, .art-1, .art-2, .art-3 { background: linear-gradient(140deg, #14252d, #20343b); color: var(--text-soft); }
+.art-1 { background: linear-gradient(140deg, #16282d, #243a40); }
+.art-2 { background: linear-gradient(140deg, #282820, #403a2b); }
+.art-3 { background: linear-gradient(140deg, #18242e, #29333b); }
+.art-no, .art-type { color: var(--text-soft); }
+.art-symbol { color: var(--gold-wash); }
+.art-lines, .art-lines::before, .art-lines::after { border-color: var(--line-glass); background-color: var(--line-glass); }
+.evidence-card:hover, .suspect-row:hover { border-color: var(--teal); }
+.evidence-card-body > b { color: var(--text); font-size: 0.9375rem; }
+.evidence-status.verified, .reliability.verified { color: var(--evidence-verified); border-color: var(--teal); }
+.evidence-status.unverified, .reliability.unverified { color: var(--evidence-unverified); border-color: var(--gold); }
+.evidence-status.misleading, .reliability.misleading { color: var(--evidence-red-herring); border-color: var(--crimson); }
+.timeline-list::before { background: var(--line-bright); }
+.timeline-pin i { background: var(--gold); border-color: var(--surface-900); }
+.working-paper { background: linear-gradient(110deg, var(--surface-850), var(--surface-900)); border-color: var(--line); }
+.working-paper p { color: var(--text); }
+.working-paper em { color: var(--gold-soft); }
+
+/* Actions, inputs, status and outcome states */
+.progress-track { background: var(--surface-800); }
+.progress-track span { background: var(--teal); }
+.progress-checks { border-color: var(--line); }
+.progress-checks > div { color: var(--muted); }
+.progress-checks .done i { border-color: var(--teal); background: var(--teal-deep); }
+.accuse-button { border-color: var(--gold); background: var(--gold-wash); color: var(--gold-soft); }
+.board-chips > span { background: var(--surface-850); border-color: var(--line); color: var(--text-soft); }
+.board-chips .board-empty { color: var(--muted); }
+.hint-card { border-color: var(--line-bright); background: var(--surface-850); }
+.search-box { color: var(--muted); }
+.search-box input, .premise-input, .notes-area { color: var(--text); }
+.premise-input { background: var(--ink-900); border-color: var(--line-bright); font-size: var(--font-body); line-height: var(--line-height-body); }
+.premise-input::placeholder, .notes-area::placeholder, .search-box input::placeholder { color: var(--muted); }
+.form-row select, .board-form select { color: var(--text); }
+.primary-button, .landing-primary { border-color: var(--teal); background: var(--teal); color: var(--button-text); }
+.landing-secondary, .text-link, .board-button, .key-clue-list button { color: var(--gold-soft); }
+.inline-error, .toast-error { border-color: var(--crimson); background: var(--crimson-deep); color: var(--crimson-soft); }
+.result-banner { border-color: var(--gold); background: var(--surface-850); }
+.result-banner.correct { border-color: var(--teal); background: var(--teal-deep); }
+.result-banner.incorrect { border-color: var(--crimson); background: var(--crimson-deep); }
+.result-banner > span { background: var(--teal-deep); color: var(--teal-bright); }
+.result-banner.incorrect > span { background: var(--crimson); color: var(--text); }
+.modal-backdrop { background: var(--scrim); }
+.modal { background: var(--surface-900); border-color: var(--line-bright); }
+.modal-heading { border-color: var(--line); }
+.evidence-document { background: var(--surface-850); color: var(--text-soft); }
+.tag-row span { color: var(--gold-soft); border-color: var(--line-bright); }
+.accuse-option { border-color: var(--line); }
+.accuse-option.selected { border-color: var(--teal); background: var(--teal-wash); }
+.accuse-option > i { color: var(--teal); border-color: var(--line-bright); }
+.suspect-avatar.sage, .mini-avatar.sage { background: var(--teal-avatar); }
+.suspect-avatar.rust, .mini-avatar.rust { background: var(--crimson-deep); }
+.suspect-avatar.blue, .mini-avatar.blue { background: var(--blue-avatar); }
+.suspect-avatar.gold, .mini-avatar.gold { background: var(--gold-deep); }
+.notes-area { background: repeating-linear-gradient(to bottom, var(--surface-900) 0, var(--surface-900) 30px, var(--surface-800) 31px); }
+.notes-foot, .autosave { color: var(--muted); }
+
+/* Landing page palette, scale and responsive typography */
+.landing-page { background: radial-gradient(ellipse at 76% 47%, #16262d 0%, var(--ink-900) 42%, var(--ink-950) 78%); }
+.landing-top, .landing-footer { border-color: var(--line); }
+.landing-copy h1 { font-size: var(--font-title-xl); line-height: 1.06; color: var(--text); }
+.landing-copy h1 em { color: var(--teal-bright); }
+.landing-copy > p { color: var(--text-soft); font-size: 1rem; line-height: 1.8; }
+.landing-eyebrow, .landing-promise { color: var(--muted); }
+.landing-eyebrow span { background: var(--teal); }
+.landing-promise svg { color: var(--gold); }
+.preview-paper { background: linear-gradient(145deg, #1a3038, #111d25); border-color: var(--line-bright); }
+.preview-stamp, .preview-eyebrow, .preview-paper > p { color: var(--text-soft); }
+.preview-paper h2 { color: var(--text); }
+.preview-stamp { border-color: var(--line-glass); }
+.preview-moon { border-color: var(--line-glass); box-shadow: 0 0 0 15px var(--teal-wash), 0 0 0 31px var(--texture); }
+.preview-moon::after { background: linear-gradient(130deg, var(--gold-wash), var(--texture)); }
+.preview-rule { background: var(--gold); }
+.preview-footer, .preview-index, .landing-footer { color: var(--muted); }
+.preview-index span { color: var(--gold-soft); }
+.preview-note { background: var(--paper); color: var(--paper-ink); }
+
+/* Keep compact case metadata legible while leaving the editorial scale intact. */
+.workspace-label, .nav-label, .case-status, .crumbs > span, .eyebrow,
+.section-kicker, .report-ref, .field-label, .card-meta, .card-foot,
+.time-stamp, .suspect-number, .evidence-detail-meta, .reliability,
+.evidence-status, .preview-footer, .preview-stamp, .preview-eyebrow,
+.preview-index, .landing-eyebrow, .landing-footer, .field-meta { font-size: max(0.6875rem, 10px); }
+.nav-item, .brief-text, .timeline-row p, .suspect-main > small,
+.suspect-motive > span, .modal-intro, .profile-fact span,
+.solution-copy p, .evidence-card-body > p { font-size: max(0.8125rem, 12px); }
+@media (max-width: 660px) {
+  .landing-copy h1 { font-size: clamp(2.8rem, 12vw, 3.4rem); }
+  .landing-copy > p { font-size: 0.9375rem; }
+}
